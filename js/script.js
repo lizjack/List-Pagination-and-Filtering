@@ -40,7 +40,7 @@ function showPage(list, page) {
    let startIndex = (page * perPage) - perPage;
    let endIndex = page * perPage;
       for (let i = 0; i < list.length; i ++) {
-         if (list[i] >= startIndex || list[i] <= endIndex) {
+         if (list[i] >= startIndex && list[i] <= endIndex) {
             //that item should be shown on the page
             list[i].style.display = '';
          } else {
@@ -49,8 +49,6 @@ function showPage(list, page) {
         // the page should show the item 
       }
 };
-
-
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
@@ -66,27 +64,18 @@ function appendPageLinks(list) {
       for (let i = 0; i < pagesNeeded.length; i ++) {
          let li = document.createElement('li');
          let link = document.createElement('a');
-         pagesNeeded[i].textContent += link;
-         pagesNeeded[i].textContent += li;
+        // pagesNeeded[i].innerHTML += link + ;
+         //pagesNeeded[i].innerHTML += li + ;
       }
-         link.addEventListener('click', (event) => {
+         ul.addEventListener('click', (event) => {
             if (event.target.tagName = 'A')
             showPage(list, page);
             for (let j = 0; j < link.length; j ++) {
-               link.className !== 'active';
+               link[i].className !== 'active';
                event.target.className = 'active';
             }
          })
-
-
-
-   //a nested UL elemet containing one LI element for every 10 names in the list
-   //you can divide list.length by max numver of items per page(10) to figure
-   //out how many pages are needed, and use a loop that iterates
-   // that many times to create the correct number of Li elements
 }
-showPage(studentList, 1);
-appendPageLinks(studentList);
 
 
 
