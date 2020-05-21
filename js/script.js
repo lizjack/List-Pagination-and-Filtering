@@ -56,7 +56,7 @@ function showPage(list, page) {
    functionality to the pagination buttons.
 ***/
 function appendPageLinks(list) {
-   const pagesNeeded = list.length / 10;
+   const pagesNeeded = list.length / perPage;
    const page = document.querySelector('.page');
    const div = document.createElement('div');
    const ul = document.createElement('ul');
@@ -64,19 +64,19 @@ function appendPageLinks(list) {
    page.appendChild(div);
    div.appendChild(ul);
       for (let i = 0; i < pagesNeeded.length; i ++) {
-         const li = document.createElement('li');
-         const a = document.createElement('a');
-         pagesNeeded[i].textContent += a;
+         let li = document.createElement('li');
+         let link = document.createElement('a');
+         pagesNeeded[i].textContent += link;
          pagesNeeded[i].textContent += li;
-         a.addEventListener('click', (event) => {
+      }
+         link.addEventListener('click', (event) => {
             if (event.target.tagName = 'A')
-            showPage(WHATGOESHEREPAGESOMETHING);
-            for (let j = 0; j < PAGINATIONSLINKS; j ++) {
-               a.className !== 'active';
-               event.className = 'active';
+            showPage(list, page);
+            for (let j = 0; j < link.length; j ++) {
+               link.className !== 'active';
+               event.target.className = 'active';
             }
          })
-      }
 
 
 
@@ -85,7 +85,8 @@ function appendPageLinks(list) {
    //out how many pages are needed, and use a loop that iterates
    // that many times to create the correct number of Li elements
 }
-
+showPage(studentList, 1);
+appendPageLinks(studentList);
 
 
 
