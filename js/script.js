@@ -7,7 +7,7 @@ FSJS project 2 - List Filter and Pagination
 
 
 //Two global variables declared
-const studentList = document.querySelector('.student-list');
+const studentList = document.querySelectorAll('.student-item');
 const perPage = 10;
 
 
@@ -25,11 +25,10 @@ const perPage = 10;
 ***/
 
 function showPage(list, page) {
-   //declare startIndex and endIndex to determine which students will be shown
    let startIndex = (page * perPage) - perPage;
    let endIndex = page * perPage;
       for (let i = 0; i < list.length; i ++) {
-         //uses startIndex and endIndex as a reference for which students to show
+         //uses startIndex and endIndex as a reference for which students to show on the page
          if (i >= startIndex && i <= endIndex) {
             list[i].style.display = 'block';
          } else {
