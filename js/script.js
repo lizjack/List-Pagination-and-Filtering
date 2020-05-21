@@ -64,7 +64,18 @@ function appendPageLinks(list) {
    page.appendChild(div);
    div.appendChild(ul);
       for (let i = 0; i < pagesNeeded.length; i ++) {
-         pagesNeeded[i].textContent = 
+         const li = document.createElement('li');
+         const a = document.createElement('a');
+         pagesNeeded[i].textContent += a;
+         pagesNeeded[i].textContent += li;
+         a.addEventListener('click', (event) => {
+            if (event.target.tagName = 'A')
+            showPage(WHATGOESHEREPAGESOMETHING);
+            for (let j = 0; j < PAGINATIONSLINKS; j ++) {
+               a.className !== 'active';
+               event.className = 'active';
+            }
+         })
       }
 
 
