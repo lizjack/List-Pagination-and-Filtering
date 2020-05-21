@@ -64,8 +64,9 @@ function appendPageLinks(list) {
       for (let i = 0; i < pagesNeeded.length; i ++) {
          let li = document.createElement('li');
          let link = document.createElement('a');
-        // pagesNeeded[i].innerHTML += link + ;
-         //pagesNeeded[i].innerHTML += li + ;
+         ul.appendChild(li);
+         link.href = "#";
+         link.textContent = "i";
       }
          ul.addEventListener('click', (event) => {
             if (event.target.tagName = 'A')
@@ -77,6 +78,6 @@ function appendPageLinks(list) {
          })
 }
 
-
+appendPageLinks(studentList);
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
