@@ -42,7 +42,7 @@ function showPage(list, page) {
       for (let i = 0; i < list.length; i ++) {
          if (list[i] >= startIndex && list[i] <= endIndex) {
             //that item should be shown on the page
-            list[i].style.display = '';
+            list[i].style.display = 'block';
          } else {
             list[i].style.display = 'none';
          }
