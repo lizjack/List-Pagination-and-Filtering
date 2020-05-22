@@ -8,7 +8,7 @@ FSJS project 2 - List Filter and Pagination
 
 //Two global variables declared
 const studentList = document.querySelectorAll('.student-item');
-const perPage = 10;
+const perPage = 9;
 
 
 
@@ -47,7 +47,7 @@ function appendPageLinks(list) {
    //creates a ul and appends it to the div
    const page = document.querySelector('.page');
    const div = document.createElement('div');
-   div.className = 'pagination';
+   div.className = "pagination";
    const ul = document.createElement('ul');
    page.appendChild(div);
    div.appendChild(ul);
@@ -56,30 +56,31 @@ function appendPageLinks(list) {
       for (let i = 0; i < pagesNeeded.length; i ++) {
          let li = document.createElement('li');
          let link = document.createElement('a');
+         ul.appendChild(li);
          // add active class to first link
          if (i === 1) {
-            link.className = 'active';
+            link.className = "active";
          }
+         li.appendChild(link);
          link.href = "#";
          link.textContent = i;
 
          //append the link to the list and eventually the div to the page parent element
-         li.appendChild(link);
-         ul.appendChild(li);
-         div.appendChild(ul);
          page.appendChild(div);
 
          // create eventListener for anchor tags
          page.addEventListener('click', (event) => {
-            if (event.target.tagName = 'A')
+            if (event.target.tagName = 'A') 
             for (let j = 0; j < event.target.length; j ++) {
-               event.target.className === 'active';
+               j.classList.remove('active');
             }
+            event.target.className = "active";
             //showPage function called passing studentList and the j index
             showPage(studentList, j);
          });
       }
-}
+};
+
 //call functions
 showPage(studentList, 1);
 appendPageLinks(studentList);
