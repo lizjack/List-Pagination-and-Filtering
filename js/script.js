@@ -38,7 +38,7 @@ function appendPageLinks(list) {
 
 
       //Use a loop to determine pages needed
-      for (let i = 0; i < pagesNeeded; i ++) {
+      for (let i = 1; i < pagesNeeded + 1; i ++) {
          //create list and anchor and append to ul and li
          let li = document.createElement("li");
          let link = document.createElement("a");
