@@ -54,16 +54,15 @@ function appendPageLinks(list) {
             li.appendChild(link);
       
          // create eventListener for anchor tags
-         page.addEventListener('click', (event) => {
-            if (event.target.tagName = 'A') 
-            for (let j = 0; j < event.target.length; j ++) {
+         link.addEventListener('click', (event) => {
+            for (let j = 0; j < link.length; j ++) {
              //active class removed from all links
-               event.target.classList.remove('active');
+               link.classList.remove('active');            
             }
+             //showPage function called
+            showPage(studentList, i);
             //active class is added to link that was just clicked
             event.target.className = "active";
-            //showPage function called
-            showPage(studentList, i);
          });
       }
 };
