@@ -33,8 +33,8 @@ function appendPageLinks(list) {
    const paginationDiv = document.createElement("div");
    paginationDiv.className = "pagination";
    const ul = document.createElement("ul");
-   paginationDiv.appendChild(ul);
    page.appendChild(paginationDiv);
+   paginationDiv.appendChild(ul);
 
 
       //Use a loop to determine pages needed
@@ -42,23 +42,23 @@ function appendPageLinks(list) {
          //create list and anchor and append to ul and li
          let li = document.createElement("li");
          let link = document.createElement("a");
-         ul.appendChild(li);
-         li.appendChild(link);
          link.href = "#";
          link.innerHTML = i;
-           // add active class to first link
+         ul.appendChild(li);
+         li.appendChild(link);
+            //add active class to first link
             if (i === 1) {
                link.className = "active";
             }
-            ul.appendChild(li);
             li.appendChild(link);
+            ul.appendChild(li);
       
          // create eventListener for anchor tags
          link.addEventListener('click', (event) => {
             for (let j = 0; j < link.length; j ++) {
              //active class removed from all links
-               link.classList.remove('active');            
-            }
+               link[j].classList.remove("active");            
+           }
              //showPage function called
             showPage(studentList, i);
             //active class is added to link that was just clicked
