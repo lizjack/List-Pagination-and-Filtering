@@ -56,10 +56,9 @@ function appendPageLinks(list) {
          // create eventListener for anchor tags
          link.addEventListener('click', (event) => {
             const pageLinks = document.querySelectorAll('a');
-            console.log(pageLinks);
-            for (let j = 0; j < pageLinks; j ++) {
+            for (let j = 0; j < pageLinks.length; j ++) {
              //active class removed from all links
-               pageLinks[j].classList.remove("active");            
+               pageLinks[j].classList.remove("active");           
            }
              //showPage function called
             showPage(studentList, i);
